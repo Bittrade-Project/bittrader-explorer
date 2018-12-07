@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Masari Explorer</title>
+	<title>Bittrader Explorer</title>
 
 	<link href="css/main.css" rel="stylesheet"/>
 	<link href="css/font-awesome.min.css" rel="stylesheet"/>
@@ -46,7 +46,7 @@
 					</div>-->
 					<div class="column group">
 						<div class="item">Last block time: <span class="value">{{networkStats.timestamp | date}}</span></div>
-						<div class="item">Last block reward: <span class="value">{{networkStats.reward | piconero}} MSR</span></div>
+						<div class="item">Last block reward: <span class="value">{{networkStats.reward | piconero}} TRD</span></div>
 						<div class="item">Avg Solve Time (Target): <span class="value">{{avgSolveTime}} ({{networkInfo.target}})s</span></div>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 					<tr v-for="tx in txsInMempool">
 						<td class="">{{tx.receive_time | date}}</td>
 						<td class=""><a :href="'transaction.html?hash='+tx.id_hash">{{tx.id_hash}}</a></td>
-						<td class="tar">{{tx.fee | piconero}} MSR</td>
+						<td class="tar">{{tx.fee | piconero}} TRD</td>
 					</tr>
 					<tr v-if="txsInMempool.length === 0">
 						<td colspan="3" class="tac">
@@ -101,7 +101,7 @@
 							<td class="">{{header.timestamp | date}}</td>
 							<td class="tar">{{header.block_size | bytes}}</td>
 							<td class=""><a :href="'block.html?hash='+header.hash">{{header.hash}}</a></td>
-							<td class="tar">{{header.reward | piconero}} MSR</td>
+							<td class="tar">{{header.reward | piconero}} TRD</td>
 							<td class="tar">{{header.difficulty | difficulty}}</td>
 							<td class="tar">{{header.num_txes}}</td>
 						</tr>
@@ -122,7 +122,7 @@
 	</div>
 
 	<div class="pageContainer footer padding10">
-		<div class="copyright">© 2018 <a href="https://getmasari.org">Masari</a></div>
+		<div class="copyright">© 2018 <a href="https://bittrader.io">Bittrader</a></div>
 		<div class="daemonInfo">
 			<div class="container">
 				Node info<br/>

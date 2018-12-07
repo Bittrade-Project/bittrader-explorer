@@ -1,8 +1,8 @@
 let global : any = typeof window !== 'undefined' ? window : self;
 global.config = {
-	apiUrl:typeof window !== 'undefined' && window.location ? window.location.href.substr(0,window.location.href.lastIndexOf('/')+1)+'api/' : 'https://www.masariwallet.com/api/',
-	mainnetExplorerUrl: "https://msrchain.net/",
-	testnetExplorerUrl: "http://testnet.msrchain.net/",
+	apiUrl:typeof window !== 'undefined' && window.location ? window.location.href.substr(0,window.location.href.lastIndexOf('/')+1)+'api/' : 'https://www.bittraderwallet.com/api/',
+	mainnetExplorerUrl: "https://trdchain.net/",
+	testnetExplorerUrl: "http://testnet.trdchain.net/",
 	testnet: false,
 	coinUnitPlaces: 12,
 	txMinConfirms: 10,         // corresponds to CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE in Monero
@@ -20,10 +20,10 @@ global.config = {
 	idleTimeout: 30,
 	idleWarningDuration: 20,
 
-	coinSymbol: 'MSR',
-	openAliasPrefix: "msr",
-	coinName: 'Masari',
-	coinUriPrefix: 'masari:',
+	coinSymbol: 'TRD',
+	openAliasPrefix: "trd",
+	coinName: 'Bittrader',
+	coinUriPrefix: 'bittrader:',
 	avgBlockTime: 120,
 	maxBlockNumber: 500000000,
 };

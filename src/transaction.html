@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Masari Explorer</title>
+	<title>Bittrader Explorer</title>
 
 	<link href="css/main.css" rel="stylesheet"/>
 	<link href="css/font-awesome.min.css" rel="stylesheet"/>
@@ -33,8 +33,8 @@
 					<div class="" v-if="transaction.in_pool" >In mempool</div>
 					<div class="">Hash: <span class="value2">{{transaction.tx_hash}}</span></div>
 					<div class="">Public key: <span class="value2">{{txPubKey}}</span></div>
-					<div v-if="transaction.as_json.rct_signatures.fee" class="">Fee: <span class="value2">{{transaction.as_json.rct_signatures.txnFee | piconero}} MSR</span></div>
-					<div v-if="sumOutputs > 0" class="">Sum outputs: <span class="value2">{{sumOutputs | piconero}} MSR</span></div>
+					<div v-if="transaction.as_json.rct_signatures.fee" class="">Fee: <span class="value2">{{transaction.as_json.rct_signatures.txnFee | piconero}} TRD</span></div>
+					<div v-if="sumOutputs > 0" class="">Sum outputs: <span class="value2">{{sumOutputs | piconero}} TRD</span></div>
 					<div class="">Extra: <span class="value2">{{extraAsHex}}</span></div>
 					<div v-if="paymentId != ''" class="">Payment ID: <span class="value2">{{paymentId}}</span></div>
 					<div v-if="encryptedPaymentId != ''" class="">Encrypted Payment ID: <span class="value2">{{encryptedPaymentId}}</span></div>
@@ -89,7 +89,7 @@
 						</thead>
 						<tbody>
 						<tr v-for="input of transaction.as_json.vin" v-if="input.key">
-							<td>{{input.key.amount | piconero}} MSR</td>
+							<td>{{input.key.amount | piconero}} TRD</td>
 							<td>{{input.key.k_image}}</td>
 							<td>{{input.key.key_offsets | offsets}}</td>
 						</tr>
@@ -116,11 +116,11 @@
 						</thead>
 						<tbody>
 						<tr v-if="decodedOuts.length == 0" v-for="output of transaction.as_json.vout">
-							<td>{{output.amount | piconero}} MSR</td>
+							<td>{{output.amount | piconero}} TRD</td>
 							<td>{{output.target.key}}</td>
 						</tr>
 						<tr v-if="decodedOuts.length != 0" v-for="output of decodedOuts" >
-							<td>{{output.amount | piconero}} MSR</td>
+							<td>{{output.amount | piconero}} TRD</td>
 							<td>{{output.pubKey}}</td>
 						</tr>
 						<tr v-if="transaction.as_json.vout.length === 0">
@@ -150,7 +150,7 @@
 
 			<div class="panel" >
 				<div class="title" >Prove sending</div>
-				<div class="subtitle" >"Transaction private key" can be obtained using the "get_tx_key" command in masari-wallet-cli command line tool or in the transaction details on the webwallet</div>
+				<div class="subtitle" >"Transaction private key" can be obtained using the "get_tx_key" command in bittrader-wallet-cli command line tool or in the transaction details on the webwallet</div>
 				<div class="content padding10" >
 					<div class="field" >
 						<label>Recipient's address/subaddress</label>
@@ -173,7 +173,7 @@
 	</div>
 
 	<div class="pageContainer footer padding10">
-		<div class="copyright">© 2018 <a href="https://getmasari.org" >Masari</a></div>
+		<div class="copyright">© 2018 <a href="https://bittrader.io" >Bittrader</a></div>
 		<div class="daemonInfo">
 			<div class="container" >
 				Node info<br/>
